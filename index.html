@@ -266,6 +266,33 @@ input:focus, textarea:focus {
   }
 }
 
+
+
+
+/* Mobile menu ko fixed position dena */
+#mobile-menu {
+  position: fixed;
+  top: 80px; /* Header ki height ke equal */
+  left: 0;
+  right: 0;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  z-index: 1000;
+  display: none; /* Initially hidden */
+}
+
+/* Mobile menu ko show karne ka style */
+#mobile-menu.active {
+  display: block;
+}
+
+/* Header ki height ko fix karna */
+.header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
     </style>
   </head>
   <body class="bg-gray-50">
@@ -609,23 +636,24 @@ input:focus, textarea:focus {
       }, 500);
     });
 
+
+
+    // Intersection Observer ka use karke
+const mapObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Map initialize karein
+      initMap();
+      mapObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.1});
+
+mapObserver.observe(document.getElementById('map'));
+
   </script>
 
-  <script id="aos-init">
-  document.addEventListener("DOMContentLoaded", function () {
-    AOS.init({
-      once: true,
-      offset: 100,
-      delay: 100,
-      duration: 1000,
-      easing: "ease-in-out",
-      disable: function() {
-        // Mobile pe animation disable
-        return window.innerWidth < 768;
-      }
-    });
-  });
-</script>
+  
 
   <!-- Custom Styling -->
   <style>
