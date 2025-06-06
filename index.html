@@ -608,7 +608,24 @@ input:focus, textarea:focus {
         map.invalidateSize();
       }, 500);
     });
+
   </script>
+
+  <script id="aos-init">
+  document.addEventListener("DOMContentLoaded", function () {
+    AOS.init({
+      once: true,
+      offset: 100,
+      delay: 100,
+      duration: 1000,
+      easing: "ease-in-out",
+      disable: function() {
+        // Mobile pe animation disable
+        return window.innerWidth < 768;
+      }
+    });
+  });
+</script>
 
   <!-- Custom Styling -->
   <style>
@@ -631,6 +648,7 @@ input:focus, textarea:focus {
         height: 300px;
       }
     }
+
   </style>
 </section>
 
