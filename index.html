@@ -59,6 +59,7 @@ html {
 body {
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
+  
 }
 
 /* ===== HERO SLIDER ===== */
@@ -269,29 +270,44 @@ input:focus, textarea:focus {
 
 
 
-/* Mobile menu ko fixed position dena */
-#mobile-menu {
+
+
+
+
+
+
+
+/* Navbar fix aur visible */
+header, nav, .navbar {
   position: fixed;
-  top: 80px; /* Header ki height ke equal */
+  top: 0;
   left: 0;
-  right: 0;
-  max-height: calc(100vh - 80px);
-  overflow-y: auto;
-  z-index: 1000;
-  display: none; /* Initially hidden */
+  width: 100%;
+  z-index: 9999 !important;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Mobile menu ko show karne ka style */
-#mobile-menu.active {
-  display: block;
+/* Body me navbar height ke hisab se padding */
+body {
+  padding-top: 60px; /* apne navbar ki actual height ke hisab se adjust karo */
 }
 
-/* Header ki height ko fix karna */
-.header {
-  height: 80px;
-  display: flex;
-  align-items: center;
+/* Map section ke animation jaisa hai, woh chal sakta hai */
+[data-aos] {
+  /* normal animation */
 }
+
+/* Agar firbhi koi problem aaye toh overflow/opacity fix karna */
+header, nav, .navbar {
+  overflow: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+
+
+
 
     </style>
   </head>
@@ -635,25 +651,7 @@ input:focus, textarea:focus {
         map.invalidateSize();
       }, 500);
     });
-
-
-
-    // Intersection Observer ka use karke
-const mapObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Map initialize karein
-      initMap();
-      mapObserver.unobserve(entry.target);
-    }
-  });
-}, {threshold: 0.1});
-
-mapObserver.observe(document.getElementById('map'));
-
   </script>
-
-  
 
   <!-- Custom Styling -->
   <style>
@@ -676,7 +674,6 @@ mapObserver.observe(document.getElementById('map'));
         height: 300px;
       }
     }
-
   </style>
 </section>
 
