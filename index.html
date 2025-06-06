@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ronak Rudra Security & Management Services</title>
+    <meta
+      name="description"
+      content="Your trusted partner in security and manpower solutions. We provide security guards, gunmen, bouncers, escort services, and more."
+    />
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#1B365D", secondary: "#FFD700" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+      }
+      body {
+      font-family: 'Montserrat', sans-serif;
+      }
+      .hero-slider {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      }
+      .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      background-size: cover;
+      background-position: center;
+      }
+      .slide.active {
+      opacity: 1;
+      }
+      .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      }
+      .slide-indicators {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      }
+      .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: background 0.3s ease;
+      }
+      .indicator.active {
+      background: #FFD700;
+      }
+      .service-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .flip-card {
+      perspective: 1000px;
+      height: 250px;
+      }
+      .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      }
+      .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+      }
+      .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      border-radius: 8px;
+      }
+      .flip-card-front {
+      background-color: #f9fafb;
+      color: #1B365D;
+      }
+      .flip-card-back {
+      background-color: #1B365D;
+      color: white;
+      transform: rotateY(180deg);
+      }
+      .floating-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 99;
+      animation: bounce 2s infinite;
+      }
+      .floating-button.whatsapp {
+      bottom: 100px;
+      }
+      @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+      40% {transform: translateY(-10px);}
+      60% {transform: translateY(-5px);}
+      }
+      input, textarea {
+      border: 1px solid #e5e7eb;
+      outline: none;
+      }
+      input:focus, textarea:focus {
+      border-color: #1B365D;
+      box-shadow: 0 0 0 3px rgba(27, 54, 93, 0.1);
+      }
+      .header {
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header
+      class="header fixed w-full bg-white bg-opacity-90 shadow-md z-50 transition-all duration-300"
+    >
+      <div
+        class="container mx-auto px-4 py-3 flex items-center justify-between"
+      >
+        <a href="#" class="text-3xl font-['Pacifico'] text-primary">logo</a>
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a
+            href="#home"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >About</a
+          >
+          <a
+            href="#services"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >Services</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-700 hover:text-primary font-medium transition-colors"
+            >Contact</a
+          >
+          <button
+            class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+          >
+            Get Protected Now
+          </button>
+        </nav>
+        <!-- Mobile Navigation Toggle -->
+        <div
+          class="md:hidden w-10 h-10 flex items-center justify-center cursor-pointer"
+          id="mobile-menu-button"
+        >
+          <i class="ri-menu-line ri-2x text-primary"></i>
+        </div>
+      </div>
+      <!-- Mobile Navigation Menu -->
+      <div
+        class="md:hidden bg-white absolute w-full left-0 top-full shadow-md hidden"
+        id="mobile-menu"
+      >
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+          <a
+            href="#home"
+            class="text-gray-700 hover:text-primary font-medium py-2 transition-colors"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="text-gray-700 hover:text-primary font-medium py-2 transition-colors"
+            >About</a
+          >
+          <a
+            href="#services"
+            class="text-gray-700 hover:text-primary font-medium py-2 transition-colors"
+            >Services</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-700 hover:text-primary font-medium py-2 transition-colors"
+            >Contact</a
+          >
+          <button
+            class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap"
+          >
+            Get Protected Now
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section id="home" class="hero-slider">
+      <div
+        class="slide active"
+        style="background-image: url('https://readdy.ai/api/search-image?query=Professional%20security%20guard%20in%20uniform%20standing%20alert%20outside%20a%20corporate%20building%20at%20night%20with%20subtle%20lighting%2C%20serious%20expression%2C%20professional%20posture%2C%20high-quality%20security%20uniform%20with%20badge%2C%20modern%20architecture%20in%20background%2C%20clean%20environment&width=1920&height=1080&seq=1&orientation=landscape');"
+      >
+        <div class="overlay"></div>
+        <div class="container mx-auto px-4 h-full flex items-center">
+          <div class="w-full max-w-3xl text-white">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+              Your Trusted Partner in Security & Manpower Solutions
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">
+              Providing top-notch security services and professional manpower
+              solutions for businesses and individuals.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <button
+                class="bg-secondary text-primary px-8 py-3 !rounded-button font-bold hover:bg-opacity-90 transition-colors whitespace-nowrap"
+              >
+                Get Protected Now
+              </button>
+              <button
+                class="border-2 border-white text-white px-8 py-3 !rounded-button font-bold hover:bg-white hover:text-primary transition-colors whitespace-nowrap"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="slide"
+        style="background-image: url('https://readdy.ai/api/search-image?query=Professional%20armed%20security%20personnel%20in%20tactical%20uniform%20guarding%20a%20high-value%20transport%20vehicle%2C%20serious%20expression%2C%20professional%20stance%2C%20urban%20environment%2C%20daytime%20setting%2C%20clean%20professional%20image%20showing%20reliability%20and%20vigilance&width=1920&height=1080&seq=2&orientation=landscape');"
+      >
+        <div class="overlay"></div>
+        <div class="container mx-auto px-4 h-full flex items-center">
+          <div class="w-full max-w-3xl text-white">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+              Professional Armed Security Services
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">
+              Trained gunmen and armed personnel for high-security requirements
+              and special operations.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <button
+                class="bg-secondary text-primary px-8 py-3 !rounded-button font-bold hover:bg-opacity-90 transition-colors whitespace-nowrap"
+              >
+                Get Protected Now
+              </button>
+              <button
+                class="border-2 border-white text-white px-8 py-3 !rounded-button font-bold hover:bg-white hover:text-primary transition-colors whitespace-nowrap"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="slide"
+        style="background-image: url('https://readdy.ai/api/search-image?query=Professional%20event%20security%20team%20in%20formal%20attire%20monitoring%20a%20high-profile%20corporate%20event%2C%20crowd%20control%2C%20elegant%20venue%20with%20guests%2C%20evening%20setting%2C%20professional%20appearance%2C%20attentive%20posture%2C%20subtle%20lighting%20highlighting%20security%20presence&width=1920&height=1080&seq=3&orientation=landscape');"
+      >
+        <div class="overlay"></div>
+        <div class="container mx-auto px-4 h-full flex items-center">
+          <div class="w-full max-w-3xl text-white">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+              Expert Event Security Management
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">
+              Specialized security personnel for events, concerts, and
+              high-profile gatherings.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <button
+                class="bg-secondary text-primary px-8 py-3 !rounded-button font-bold hover:bg-opacity-90 transition-colors whitespace-nowrap"
+              >
+                Get Protected Now
+              </button>
+              <button
+                class="border-2 border-white text-white px-8 py-3 !rounded-button font-bold hover:bg-white hover:text-primary transition-colors whitespace-nowrap"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="slide"
+        style="background-image: url('https://readdy.ai/api/search-image?query=Professional%20hotel%20staff%20team%20in%20elegant%20uniforms%20standing%20in%20lobby%20of%20luxury%20hotel%2C%20diverse%20group%20of%20concierge%2C%20housekeeping%2C%20and%20management%20personnel%2C%20bright%20modern%20hotel%20interior%2C%20welcoming%20expressions%2C%20professional%20posture&width=1920&height=1080&seq=4&orientation=landscape');"
+      >
+        <div class="overlay"></div>
+        <div class="container mx-auto px-4 h-full flex items-center">
+          <div class="w-full max-w-3xl text-white">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+              Professional Manpower Solutions
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">
+              Trained hotel staff, industrial workers, and management personnel
+              for your business needs.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <button
+                class="bg-secondary text-primary px-8 py-3 !rounded-button font-bold hover:bg-opacity-90 transition-colors whitespace-nowrap"
+              >
+                Get Protected Now
+              </button>
+              <button
+                class="border-2 border-white text-white px-8 py-3 !rounded-button font-bold hover:bg-white hover:text-primary transition-colors whitespace-nowrap"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-indicators">
+        <div class="indicator active" data-index="0"></div>
+        <div class="indicator" data-index="1"></div>
+        <div class="indicator" data-index="2"></div>
+        <div class="indicator" data-index="3"></div>
+      </div>
+    </section>
+
+
+    <!-- About Section -->
+<section id="about" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+
+    <!-- Heading -->
+    <div class="text-center mb-16" data-aos="fade-down" data-aos-duration="1000">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">About Ronak Rudra Security</h2>
+      <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+      <p class="text-gray-600 max-w-3xl mx-auto">
+        Dedicated to providing exceptional security and manpower solutions
+        since 2010, with a focus on professionalism, reliability, and
+        customer satisfaction.
+      </p>
+    </div>
+
+    <!-- City Buttons -->
+    <div class="city-buttons flex flex-wrap justify-center gap-3 mb-8">
+      <button class="city-btn px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark transition" data-city="Indore">Indore</button>
+      <button class="city-btn px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark transition" data-city="Bhopal">Bhopal</button>
+      <button class="city-btn px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark transition" data-city="Ujjain">Ujjain</button>
+      <button class="city-btn px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark transition" data-city="Gwalior">Gwalior</button>
+      <button class="city-btn px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark transition" data-city="Jabalpur">Jabalpur</button>
+    </div>
+
+    <!-- Content Grid -->
+    <div class="flex flex-col md:flex-row items-center gap-10">
+      
+      <!-- Interactive Map -->
+      <div class="md:w-1/2 h-[400px]" data-aos="fade-right" data-aos-duration="1000">
+        <div id="map" class="w-full h-full rounded-lg shadow-xl"></div>
+      </div>
+
+      <!-- Text Content -->
+      <div class="md:w-1/2" data-aos="fade-left" data-aos-duration="1000">
+        <h3 class="text-2xl font-bold text-primary mb-4">Our Mission</h3>
+        <p class="text-gray-700 mb-6">
+          To provide unparalleled security and manpower services that exceed
+          client expectations through professionalism, integrity, and
+          continuous improvement. We strive to create safer environments for
+          businesses and individuals while maintaining the highest standards
+          of service excellence.
+        </p>
+
+        <h3 class="text-2xl font-bold text-primary mb-4">Why Trust Us</h3>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-start">
+            <div class="w-6 h-6 flex items-center justify-center text-green-500 mr-2 mt-1">
+              <i class="ri-check-line ri-lg"></i>
+            </div>
+            <span class="text-gray-700">Over 15 years of industry experience</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-6 h-6 flex items-center justify-center text-green-500 mr-2 mt-1">
+              <i class="ri-check-line ri-lg"></i>
+            </div>
+            <span class="text-gray-700">Professionally trained and vetted security personnel</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-6 h-6 flex items-center justify-center text-green-500 mr-2 mt-1">
+              <i class="ri-check-line ri-lg"></i>
+            </div>
+            <span class="text-gray-700">Customized security solutions for every client</span>
+          </li>
+          <li class="flex items-start">
+            <div class="w-6 h-6 flex items-center justify-center text-green-500 mr-2 mt-1">
+              <i class="ri-check-line ri-lg"></i>
+            </div>
+            <span class="text-gray-700">24/7 monitoring and rapid response capabilities</span>
+          </li>
+        </ul>
+
+        <!-- Stats -->
+        <div class="flex flex-wrap gap-6 mb-6">
+          <div class="text-center">
+            <div class="text-4xl font-bold text-primary mb-2" id="counter-clients">500+</div>
+            <p class="text-gray-600">Satisfied Clients</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-primary mb-2" id="counter-personnel">1,200+</div>
+            <p class="text-gray-600">Security Personnel</p>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-primary mb-2" id="counter-cities">25+</div>
+            <p class="text-gray-600">Cities Covered</p>
+          </div>
+        </div>
+
+        <!-- Badges -->
+        <div class="flex flex-wrap gap-4">
+          <img src="Gemini_Generated_Image_3ra1lq3ra1lq3ra1.jpeg" alt="Security Certification" class="h-16 w-auto" />
+          <img src="Gemini_Generated_Image_3ra1lq3ra1lq3ra1.jpeg" alt="Industry Association" class="h-16 w-auto" />
+          <img src="Gemini_Generated_Image_3ra1lq3ra1lq3ra1.jpeg" alt="Excellence Award" class="h-16 w-auto" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+  />
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+  <!-- Map Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const map = L.map("map").setView([22.9734, 78.6569], 5); // India center
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      }).addTo(map);
+
+      const cities = [
+        { name: "Indore", coords: [22.7196, 75.8577] },
+        { name: "Bhopal", coords: [23.2599, 77.4126] },
+        { name: "Ujjain", coords: [23.1793, 75.7849] },
+        { name: "Gwalior", coords: [26.2183, 78.1828] },
+        { name: "Jabalpur", coords: [23.1815, 79.9864] },
+      ];
+
+      // Store markers by city name for easy access
+      const markers = {};
+
+      cities.forEach((city) => {
+        const marker = L.marker(city.coords)
+          .addTo(map)
+          .bindPopup(`<b>${city.name}</b><br>Security Services Active`);
+        markers[city.name] = marker;
+      });
+
+      // Buttons click handler
+      document.querySelectorAll(".city-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const cityName = btn.getAttribute("data-city");
+          const marker = markers[cityName];
+          if (marker) {
+            map.setView(marker.getLatLng(), 13, { animate: true });
+            marker.openPopup();
+          }
+        });
+      });
+    });
+  </script>
+
+  <style>
+    /* Customize button hover color (change to your actual primary-dark color) */
+    .bg-primary {
+      background-color: #1d4ed8; /* example blue */
+    }
+    .hover\:bg-primary-dark:hover {
+      background-color: #1e40af; /* darker blue */
+    }
+
+    /* Responsive adjustment if needed */
+    @media (max-width: 768px) {
+      #map {
+        height: 300px !important;
+      }
+    }
+  </style>
+</section>
+
+
+  
+
+
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Our Services
+          </h2>
+          <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+          <p class="text-gray-600 max-w-3xl mx-auto">
+            We offer a comprehensive range of security and manpower solutions
+            tailored to meet your specific requirements.
+          </p>
+        </div>
+        <!-- Security Services -->
+        <div class="mb-16">
+          <h3 class="text-2xl font-bold text-primary mb-8 text-center">
+            Security Services
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <div
+              class="service-card bg-white p-6 rounded-lg shadow-md"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <div
+                class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4 mx-auto"
+              >
+                <i class="ri-shield-user-line ri-2x text-primary"></i>
+              </div>
+              <h4 class="text-xl font-bold text-primary mb-3 text-center">
+                Security Guards
+              </h4>
+              <p class="text-gray-600 text-center mb-4">
+                Professionally trained security guards for residential,
+                commercial, and industrial premises with 24/7 availability.
+              </p>
+              <div class="flex items-center justify-center text-green-500 mb-4">
+                <i class="ri-check-line ri-lg mr-2"></i>
+                <span class="text-sm">Trained & Verified Personnel</span>
+              </div>
+              <div class="text-center">
+                <a href="#" class="text-primary font-medium hover:underline"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+            <!-- Service 2 -->
+            <div
+              class="service-card bg-white p-6 rounded-lg shadow-md"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <div
+                class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4 mx-auto"
+              >
+                <i class="ri-shield-flash-line ri-2x text-primary"></i>
+              </div>
+              <h4 class="text-xl font-bold text-primary mb-3 text-center">
+                Armed Security
+              </h4>
+              <p class="text-gray-600 text-center mb-4">
+                Licensed and trained gunmen for high-security requirements, VIP
+                protection, and valuable asset transportation.
+              </p>
+              <div class="flex items-center justify-center text-green-500 mb-4">
+                <i class="ri-check-line ri-lg mr-2"></i>
+                <span class="text-sm">Licensed & Certified</span>
+              </div>
+              <div class="text-center">
+                <a href="#" class="text-primary font-medium hover:underline"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+            <!-- Service 3 -->
+            <div
+              class="service-card bg-white p-6 rounded-lg shadow-md"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <div
+                class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4 mx-auto"
+              >
+                <i class="ri-group-line ri-2x text-primary"></i>
+              </div>
+              <h4 class="text-xl font-bold text-primary mb-3 text-center">
+                Bouncers & Event Security
+              </h4>
+              <p class="text-gray-600 text-center mb-4">
+                Professional bouncers and event security personnel for clubs,
+                concerts, corporate events, and private functions.
+              </p>
+              <div class="flex items-center justify-center text-green-500 mb-4">
+                <i class="ri-check-line ri-lg mr-2"></i>
+                <span class="text-sm">Crowd Management Experts</span>
+              </div>
+              <div class="text-center">
+                <a href="#" class="text-primary font-medium hover:underline"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+            <!-- Service 4 -->
+            <div
+              class="service-card bg-white p-6 rounded-lg shadow-md"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <div
+                class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4 mx-auto"
+              >
+                <i class="ri-car-line ri-2x text-primary"></i>
+              </div>
+              <h4 class="text-xl font-bold text-primary mb-3 text-center">
+                Escort Services
+              </h4>
+              <p class="text-gray-600 text-center mb-4">
+                Professional security escorts for VIPs, executives, and
+                high-profile individuals ensuring safe transit and protection.
+              </p>
+              <div class="flex items-center justify-center text-green-500 mb-4">
+                <i class="ri-check-line ri-lg mr-2"></i>
+                <span class="text-sm">Discreet & Professional</span>
+              </div>
+              <div class="text-center">
+                <a href="#" class="text-primary font-medium hover:underline"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+            <!-- Service 5 -->
+            <div
+              class="service-card bg-white p-6 rounded-lg shadow-md"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <div
+                class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4 mx-auto"
+              >
+                <i class="ri-bank-line ri-2x text-primary"></i>
+              </div>
+              <h4 class="text-xl font-bold text-primary mb-3 text-center">
+                Cash Van Security
+              </h4>
+              <p class="text-gray-600 text-center mb-4">
+                Specialized security for cash transportation, ATM replenishment,
+                and valuable asset movement with armored vehicles.
+              </p>
+              <div class="flex items-center justify-center text-green-500 mb-4">
+                <i class="ri-check-line ri-lg mr-2"></i>
+                <span class="text-sm">Secure & Insured</span>
+              </div>
+              <div class="text-center">
+                <a href="#" class="text-primary font-medium hover:underline"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+            <!-- Service 6 -->
+            <div
+              class="service-card bg-white p-6 rounded-lg shadow-md"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <div
+                class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4 mx-auto"
+              >
+                <i class="ri-spy-line ri-2x text-primary"></i>
+              </div>
+              <h4 class="text-xl font-bold text-primary mb-3 text-center">
+                Supervisors & Managers
+              </h4>
+              <p class="text-gray-600 text-center mb-4">
+                Experienced security supervisors and managers to oversee
+                operations, train staff, and ensure quality service delivery.
+              </p>
+              <div class="flex items-center justify-center text-green-500 mb-4">
+                <i class="ri-check-line ri-lg mr-2"></i>
+                <span class="text-sm">Leadership Expertise</span>
+              </div>
+              <div class="text-center">
+                <a href="#" class="text-primary font-medium hover:underline"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Manpower Services -->
+        <div>
+          <h3 class="text-2xl font-bold text-primary mb-8 text-center">
+            Manpower Supply
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <div
+              class="service-card bg-white p-6 rounded-lg shadow-md"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <div
+                class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4 mx-auto"
+              >
+                <i class="ri-building-line ri-2x text-primary"></i>
+              </div>
+              <h4 class="text-xl font-bold text-primary mb-3 text-center">
+                Industrial Manpower
+              </h4>
+              <p class="text-gray-600 text-center mb-4">
+                Skilled and semi-skilled workers for factories, warehouses, and
+                industrial facilities with proper training and verification.
+              </p>
+              <div class="flex items-center justify-center text-green-500 mb-4">
+                <i class="ri-check-line ri-lg mr-2"></i>
+                <span class="text-sm">Skilled & Reliable</span>
+              </div>
+              <div class="text-center">
+                <a href="#" class="text-primary font-medium hover:underline"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+            <!-- Service 2 -->
+            <div
+              class="service-card bg-white p-6 rounded-lg shadow-md"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <div
+                class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4 mx-auto"
+              >
+                <i class="ri-hotel-line ri-2x text-primary"></i>
+              </div>
+              <h4 class="text-xl font-bold text-primary mb-3 text-center">
+                Hotel Staff
+              </h4>
+              <p class="text-gray-600 text-center mb-4">
+                Professional hotel staff including housekeeping, front desk, F&B
+                service, and maintenance personnel for hospitality sector.
+              </p>
+              <div class="flex items-center justify-center text-green-500 mb-4">
+                <i class="ri-check-line ri-lg mr-2"></i>
+                <span class="text-sm">Hospitality Trained</span>
+              </div>
+              <div class="text-center">
+                <a href="#" class="text-primary font-medium hover:underline"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+            <!-- Service 3 -->
+            <div
+              class="service-card bg-white p-6 rounded-lg shadow-md"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
+              <div
+                class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4 mx-auto"
+              >
+                <i class="ri-calendar-event-line ri-2x text-primary"></i>
+              </div>
+              <h4 class="text-xl font-bold text-primary mb-3 text-center">
+                Event Staff
+              </h4>
+              <p class="text-gray-600 text-center mb-4">
+                Temporary staff for events including ushers, registration
+                personnel, servers, and support staff for seamless event
+                execution.
+              </p>
+              <div class="flex items-center justify-center text-green-500 mb-4">
+                <i class="ri-check-line ri-lg mr-2"></i>
+                <span class="text-sm">Professional & Presentable</span>
+              </div>
+              <div class="text-center">
+                <a href="#" class="text-primary font-medium hover:underline"
+                  >Learn More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Why Choose Us
+          </h2>
+          <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+          <p class="text-gray-600 max-w-3xl mx-auto">
+            We pride ourselves on delivering exceptional security and manpower
+            services that set us apart from the competition.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Feature 1 -->
+          <div class="flip-card" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="flip-card-inner">
+              <div class="flip-card-front shadow-md">
+                <div
+                  class="w-20 h-20 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4"
+                >
+                  <i class="ri-user-star-line ri-3x text-primary"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Experienced Personnel</h3>
+                <p class="text-gray-600 text-center">
+                  15+ years of industry expertise
+                </p>
+              </div>
+              <div class="flip-card-back shadow-md">
+                <h3 class="text-xl font-bold mb-4">Experienced Personnel</h3>
+                <p class="text-center">
+                  Our team consists of highly trained professionals with
+                  extensive experience in security and manpower services. We
+                  ensure rigorous vetting and continuous training to maintain
+                  the highest standards.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Feature 2 -->
+          <div class="flip-card" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="flip-card-inner">
+              <div class="flip-card-front shadow-md">
+                <div
+                  class="w-20 h-20 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4"
+                >
+                  <i class="ri-customer-service-2-line ri-3x text-primary"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
+                <p class="text-gray-600 text-center">
+                  Round-the-clock assistance
+                </p>
+              </div>
+              <div class="flip-card-back shadow-md">
+                <h3 class="text-xl font-bold mb-4">24/7 Support</h3>
+                <p class="text-center">
+                  We provide round-the-clock support and rapid response to
+                  ensure your security needs are met at all times. Our dedicated
+                  control room monitors operations continuously for immediate
+                  assistance.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Feature 3 -->
+          <div class="flip-card" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="flip-card-inner">
+              <div class="flip-card-front shadow-md">
+                <div
+                  class="w-20 h-20 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4"
+                >
+                  <i class="ri-settings-line ri-3x text-primary"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Custom Solutions</h3>
+                <p class="text-gray-600 text-center">Tailored to your needs</p>
+              </div>
+              <div class="flip-card-back shadow-md">
+                <h3 class="text-xl font-bold mb-4">Custom Solutions</h3>
+                <p class="text-center">
+                  We understand that every client has unique requirements. Our
+                  team works closely with you to develop customized security and
+                  manpower solutions that address your specific challenges and
+                  objectives.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Feature 4 -->
+          <div class="flip-card" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="flip-card-inner">
+              <div class="flip-card-front shadow-md">
+                <div
+                  class="w-20 h-20 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4"
+                >
+                  <i class="ri-medal-line ri-3x text-primary"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Trusted Reputation</h3>
+                <p class="text-gray-600 text-center">500+ satisfied clients</p>
+              </div>
+              <div class="flip-card-back shadow-md">
+                <h3 class="text-xl font-bold mb-4">Trusted Reputation</h3>
+                <p class="text-center">
+                  Our track record speaks for itself with over 500 satisfied
+                  clients across various industries. We have built our
+                  reputation on reliability, integrity, and excellence in
+                  service delivery.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Contact Us
+          </h2>
+          <div class="w-24 h-1 bg-secondary mx-auto mb-6"></div>
+          <p class="text-gray-600 max-w-3xl mx-auto">
+            Get in touch with our team to discuss your security and manpower
+            requirements. We're here to help you find the perfect solution.
+          </p>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-10">
+          <!-- Contact Form -->
+          <div class="lg:w-1/2 bg-white p-8 rounded-lg shadow-md">
+            <h3 class="text-2xl font-bold text-primary mb-6">
+              Send Us a Message
+            </h3>
+            <form id="contact-form">
+              <div class="mb-4">
+                <label for="name" class="block text-gray-700 mb-2"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-2 rounded border-none bg-gray-100 focus:bg-white focus:ring-2 focus:ring-primary"
+                  placeholder="John Smith"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <label for="email" class="block text-gray-700 mb-2"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-2 rounded border-none bg-gray-100 focus:bg-white focus:ring-2 focus:ring-primary"
+                  placeholder="john@example.com"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <label for="phone" class="block text-gray-700 mb-2"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  class="w-full px-4 py-2 rounded border-none bg-gray-100 focus:bg-white focus:ring-2 focus:ring-primary"
+                  placeholder="+91 98765 43210"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <label for="service" class="block text-gray-700 mb-2"
+                  >Service Interest</label
+                >
+                <div class="relative">
+                  <select
+                    id="service"
+                    class="w-full px-4 py-2 rounded appearance-none border-none bg-gray-100 focus:bg-white focus:ring-2 focus:ring-primary pr-8"
+                    required
+                  >
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="security-guards">Security Guards</option>
+                    <option value="armed-security">Armed Security</option>
+                    <option value="event-security">Event Security</option>
+                    <option value="escort-services">Escort Services</option>
+                    <option value="cash-van">Cash Van Security</option>
+                    <option value="industrial-manpower">
+                      Industrial Manpower
+                    </option>
+                    <option value="hotel-staff">Hotel Staff</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <div
+                    class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none"
+                  >
+                    <i class="ri-arrow-down-s-line text-gray-500"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-6">
+                <label for="message" class="block text-gray-700 mb-2"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="w-full px-4 py-2 rounded border-none bg-gray-100 focus:bg-white focus:ring-2 focus:ring-primary"
+                  placeholder="Tell us about your requirements..."
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="bg-primary text-white px-8 py-3 !rounded-button font-bold hover:bg-opacity-90 transition-colors whitespace-nowrap w-full"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+          <!-- Contact Information -->
+          <div class="lg:w-1/2">
+            <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+              <h3 class="text-2xl font-bold text-primary mb-6">
+                Contact Information
+              </h3>
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="ri-map-pin-line ri-lg text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-800 mb-1">Office Address</h4>
+                    <p class="text-gray-600">
+                      123 Security Complex, MG Road<br />Bangalore, Karnataka
+                      560001<br />India
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="ri-phone-line ri-lg text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-800 mb-1">Phone Numbers</h4>
+                    <p class="text-gray-600">
+                      Main Office: +91 80 2345 6789<br />24/7 Helpline: +91
+                      98765 43210
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="ri-mail-line ri-lg text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-800 mb-1">
+                      Email Addresses
+                    </h4>
+                    <p class="text-gray-600">
+                      General Inquiries: info@ronakrudra.com<br />Support:
+                      support@ronakrudra.com
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-12 h-12 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0"
+                  >
+                    <i class="ri-time-line ri-lg text-primary"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-800 mb-1">Working Hours</h4>
+                    <p class="text-gray-600">
+                      Monday to Friday: 9:00 AM - 6:00 PM<br />Saturday: 9:00 AM
+                      - 1:00 PM<br />24/7 Emergency Support Available
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Map -->
+            <div
+              class="bg-white p-8 rounded-lg shadow-md h-64 relative overflow-hidden"
+            >
+              <div
+                style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-position: center; background-size: cover; position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Company Info -->
+          <div>
+            <a
+              href="#"
+              class="text-3xl font-['Pacifico'] text-white mb-4 inline-block"
+              >logo</a
+            >
+            <p class="text-gray-300 mb-6">
+              Your trusted partner in security and manpower solutions since
+              2010. Providing professional services across India.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition-colors"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition-colors"
+              >
+                <i class="ri-twitter-x-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition-colors"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition-colors"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Our Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Services -->
+          <div>
+            <h3 class="text-xl font-bold mb-4">Our Services</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Security Guards</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Armed Security</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Event Security</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Escort Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Industrial Manpower</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Hotel Staff</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Contact -->
+          <div>
+            <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <div class="w-5 h-5 flex items-center justify-center mr-3 mt-1">
+                  <i class="ri-map-pin-line"></i>
+                </div>
+                <span class="text-gray-300"
+                  >123 Security Complex, MG Road<br />Bangalore, Karnataka
+                  560001</span
+                >
+              </li>
+              <li class="flex items-start">
+                <div class="w-5 h-5 flex items-center justify-center mr-3 mt-1">
+                  <i class="ri-phone-line"></i>
+                </div>
+                <span class="text-gray-300"
+                  >+91 80 2345 6789<br />+91 98765 43210</span
+                >
+              </li>
+              <li class="flex items-start">
+                <div class="w-5 h-5 flex items-center justify-center mr-3 mt-1">
+                  <i class="ri-mail-line"></i>
+                </div>
+                <span class="text-gray-300">info@ronakrudra.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            © 2025 Ronak Rudra Security & Management Services. All rights
+            reserved.
+          </p>
+          <div class="flex items-center">
+            <span class="text-secondary font-bold mr-6"
+              >Safety. Security. Trust.</span
+            >
+            <div class="flex space-x-4">
+              <i class="ri-visa-fill ri-lg text-gray-300"></i>
+              <i class="ri-mastercard-fill ri-lg text-gray-300"></i>
+              <i class="ri-paypal-fill ri-lg text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Floating Buttons -->
+    <a
+      href="tel:+919876543210"
+      class="floating-button w-14 h-14 bg-primary rounded-full flex items-center justify-center shadow-lg"
+    >
+      <i class="ri-phone-fill ri-lg text-white"></i>
+    </a>
+    <a
+      href="https://wa.me/919876543210"
+      class="floating-button whatsapp w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg"
+    >
+      <i class="ri-whatsapp-fill ri-lg text-white"></i>
+    </a>
+    <!-- Scripts -->
+    <script id="mobile-menu-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", function () {
+          if (mobileMenu.classList.contains("hidden")) {
+            mobileMenu.classList.remove("hidden");
+            mobileMenuButton.innerHTML =
+              '<i class="ri-close-line ri-2x text-primary"></i>';
+          } else {
+            mobileMenu.classList.add("hidden");
+            mobileMenuButton.innerHTML =
+              '<i class="ri-menu-line ri-2x text-primary"></i>';
+          }
+        });
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll("a");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.add("hidden");
+            mobileMenuButton.innerHTML =
+              '<i class="ri-menu-line ri-2x text-primary"></i>';
+          });
+        });
+      });
+    </script>
+    <script id="hero-slider-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".slide");
+        const indicators = document.querySelectorAll(".indicator");
+        let currentSlide = 0;
+        function showSlide(index) {
+          slides.forEach((slide) => slide.classList.remove("active"));
+          indicators.forEach((indicator) => indicator.classList.remove("active"));
+          slides[index].classList.add("active");
+          indicators[index].classList.add("active");
+          currentSlide = index;
+        }
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % slides.length;
+          showSlide(currentSlide);
+        }
+        // Set up indicator clicks
+        indicators.forEach((indicator, index) => {
+          indicator.addEventListener("click", () => {
+            showSlide(index);
+          });
+        });
+        // Auto slide change
+        setInterval(nextSlide, 5000);
+      });
+    </script>
+    <script id="scroll-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80, // Adjust for header height
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+        // Header scroll effect
+        const header = document.querySelector("header");
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) {
+            header.classList.add("shadow-lg");
+            header.classList.remove("py-3");
+            header.classList.add("py-2");
+          } else {
+            header.classList.remove("shadow-lg");
+            header.classList.remove("py-2");
+            header.classList.add("py-3");
+          }
+        });
+      });
+    </script>
+    <script id="form-script">
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactForm = document.getElementById("contact-form");
+        if (contactForm) {
+          contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            // Form validation
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const service = document.getElementById("service").value;
+            const message = document.getElementById("message").value;
+            if (!name || !email || !phone || !service || !message) {
+              alert("Please fill in all required fields");
+              return;
+            }
+            // Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+              alert("Please enter a valid email address");
+              return;
+            }
+            // Simulate form submission
+            alert("Thank you for contacting us! We will get back to you shortly.");
+            contactForm.reset();
+          });
+        }
+      });
+    </script>
+    <script id="aos-init">
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          once: true,
+          offset: 100,
+          delay: 100,
+          duration: 1000,
+          easing: "ease-in-out",
+        });
+      });
+    </script>
+  </body>
+</html>
